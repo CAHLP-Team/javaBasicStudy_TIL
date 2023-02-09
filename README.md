@@ -15,6 +15,9 @@ Today I Leared
 
 <br/>
 
+### 학습진행 페이지 
+[notion 학습 페이지 ](https://cahlp.notion.site/7497b770bc7b4c90ae4fab8ab66c3917)
+
 ### 진행 일정
 
 - 2월 7일부터 ~ 3월 4일까지 약 2주간 수행 
