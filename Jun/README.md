@@ -27,8 +27,8 @@ System.out.println(3+4);
 
 ### 2. 여러줄 주석
 >/*
-a = "coding";
-b = "everybody";
+a = "coding";<br>
+b = "everybody";<br>
 */
 
 ### 3. JavaDoc 주석
@@ -39,8 +39,8 @@ b = "everybody";
 **/로 끝
 
 >/*
-a = "coding";
-b = "everybody";
+a = "coding";<br>
+b = "everybody";<br>
 */
 
 ## 데이터의 크기
