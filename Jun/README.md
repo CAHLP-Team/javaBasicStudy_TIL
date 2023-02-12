@@ -1,6 +1,8 @@
 ## JAVA Basic Study TIL 2월 
 참고 링크:https://opentutorials.org/module/516/4551
 
+중요
+
 ---------------------
 ###  2023년 2월 8일 자바 스터디 공부
 | 날짜       | 제목               | 설명                                | 링크                                                                             |
@@ -135,8 +137,8 @@ System.out.println(i); // 7 출력
 ###>=
 좌항이 우항보다 크거나 같다.
 ###.equals
-.equals는 문자열을 비교할 때 사용하는 메소드다. 우리는 아직 메소드를 배우지 않았기 때문에 지금은 그냥 이것을 연산자로 이해해도 무방하다.
-
+.equals는 문자열을 비교할 때 사용하는 메소드다. 우리는 아직 메소드를 배우지 않았기 때문에 지금은 그냥 이것을 연산자로 이해해도 무방하다.<br>
+같으면 참, 다름면 거짓이다
 ## 조건문
 >if (true){
     System.out.println("result : true");
@@ -159,3 +161,231 @@ else if(true){
 }
 
 result : l_true
+
+
+---------------------
+
+
+###  2023년 2월 11일 자바 스터디 공부
+|   날짜    |   제목    |   설명    |   링크    |
+|-----------|----------|-----------|-----------|
+| 2023 | java 기초 |switch, break, while, for, continue, 논리 연산자| [링크]()  | 
+
+## switch
+~~~
+System.out.println("switch(1)");
+    switch(1){
+    case 1:
+        System.out.println("one");
+    case 2:
+        System.out.println("two");
+    case 3:
+        System.out.println("three");
+    }
+    System.out.println("switch(2)");
+    switch(2){
+    case 1:
+        System.out.println("one");
+    case 2:
+        System.out.println("two");
+    case 3:
+        System.out.println("three");
+    } 
+    System.out.println("switch(3)");
+    switch(3){
+    case 1:
+        System.out.println("one");
+    case 2:
+        System.out.println("two");
+    case 3:
+        System.out.println("three");
+    }
+~~~
+결과
+>switch(1)
+one
+two
+three
+switch(2)
+two
+three
+switch(3)
+three
+
+if문과 다르게 case 1만 실행되는 것이 아니라, 그 뒤에 있는 case까지 실행이 된다.<br>
+이것을 방지하기 위해서는 case 문 뒤에 break를 써야 된다.
+(참고 break 문은 for, while 같은 반복문이나, switch를 빠져나올 때 사용된다.)
+<br>
+
+~~~
+System.out.println("switch(3)");
+switch(3){
+    case 1:
+        System.out.println("one");
+        break;
+    case 2:
+        System.out.println("two");
+        break;
+    case 3:
+        System.out.println("three");
+        break;
+    }
+~~~ 
+>switch(3)
+three
+
+<br>
+주어진 케이스가 없는 경우 default 문이 실행된다
+
+~~~
+System.out.println("switch(4)");
+switch(4){
+    case 1:
+        System.out.println("one");
+        break;
+    case 2:
+        System.out.println("two");
+        break;
+    case 3:
+        System.out.println("three");
+        break;
+    default:
+        System.out.println("default");
+        break;
+    }
+~~~
+>switch(4)
+default
+
+<br>
+## 논리 연산자
+
+&&는 좌항과 우항의 값이 모두 참(true)일 때 참이 된다. And라고 읽는다.<br>
+||는 좌우항 중에 하나라도 true라면 전체가 true가 되는 논리 연산자다.<br>
+!는 부정의 의미로 not이라고 읽는다.
+Boolean의 값을 역전시키는 역할을 한다.
+true에 !를 붙으면 false가 되고 false에 !을 붙이면 true가 된다.<br>
+(and, or 항의 참, 거짓 여부에 따른 실행 절차 확인하기 || 중요)
+<br>
+
+## 반복문
+while문
+~~~
+while(조건){
+    반복 실행 영역
+}
+~~~
+
+아래 코드는 아예 컴파일조차 되지 않을 것이다. 반복 조건이 false이기 때문에 반복문이 한 번도 실행되지 않을 것이기 때문에 컴파일러가 오류를 발생시키는 것이다.
+
+~~~
+while(false){
+    System.out.println("Coding Everybody");
+}
+~~~
+
+<br>
+for문
+
+~~~
+for(초기화; 종료조건; 반복실행){
+    반복적으로 실행될 구문
+}
+//예시
+for (int i = 0; i < 10; i++) {
+    System.out.println("Coding Everybody " + i);
+}
+~~~
+
+continue문
+~~~
+for (int i = 0; i < 10; i++) {
+    if (i == 5)
+        continue;
+    System.out.println("Coding Everybody " + i);
+    }
+~~~
+아래와 같이 continue문 뒤의 문자을 무시하고 반복문을 계속한다.
+>Coding Everybody 0
+>Coding Everybody 1
+>Coding Everybody 2
+>Coding Everybody 3
+>Coding Everybody 4
+>Coding Everybody 6
+>Coding Everybody 7
+>Coding Everybody 8
+>Coding Everybody 9
+
+
+---------------------
+
+
+###  2023년 2월 12일 자바 스터디 공부
+|   날짜    |   제목    |   설명    |   링크    |
+|-----------|----------|-----------|-----------|
+| 2023 | java 기초 | 배열, 반복문 배열 사용, for-each 배열 | [링크]()  | 
+
+## 배열
+>배열은 연관된 데이터를 모아서 관리하기 위해서 사용하는 데이터 타입이다. 변수가 하나의 데이터를 저장하기 위한 것이라면 배열은 여러 개의 데이터를 저장하기 위한 것이라고 할 수 있다.
+
+생성 방법
+~~~
+String[] classGroup = { "최진혁", "최유빈", "한이람", "이고잉" };
+~~~
+String[] classGroup에서 classGroup은 배열이 담길 변수의 이름이다. String[]은 classGroup에 담을 배열에 담길 데이터의 타입이 문자열의 배열이라는 의미다<br>
+배열을 선언할 때는 데이터 타입 뒤에 []를 붙여야 한다. []가 없다면 classGroup는 배열이 아니라 문자열 데이터 타입을 갖는 변수가 된다. 배열에 소속될 데이터들은 중괄호 안에 위치한다.
+
+~~~
+String[] classGroup = { "최진혁", "최유빈", "한이람", "이고잉" };
+System.out.println(classGroup[0]);
+System.out.println(classGroup[1]);
+System.out.println(classGroup[2]);
+System.out.println(classGroup[3]);
+~~~
+결과 
+>최진혁
+최유빈
+한이람
+이고잉
+
+<br>
+classGroup[0] 처럼 배열이 담겨있는 변수의 이름 뒤에 대괄호를 붙이고 그 안에 0부터 시작하는 숫자를 입력하면 순차적으로 값을 가져올 수 있다.
+
+<br><br>
+
+~~~
+String[] classGroup = new String[4];
+classGroup[0] = "최진혁";
+System.out.println(classGroup.length);
+classGroup[1] = "최유빈";
+System.out.println(classGroup.length);
+classGroup[2] = "한이람";
+System.out.println(classGroup.length);
+classGroup[3] = "이고잉";
+System.out.println(classGroup.length);
+~~~
+
+결과
+>4
+4
+4
+4
+
+.length는 배열에 실제 담긴 데이터의 숫자를 의미하는 것이 아니라 배열을 처음 생성할 때 지정한 배열의 크기를 의미한다는 점을 주의하자.
+
+<br>
+배열의 내용을 탐색할 때 for 문을 좀 더 간편하게 사용할 수 있는 방법
+
+~~~
+String[] members = { "최진혁", "최유빈", "한이람" };
+for (String e : members) {
+    System.out.println(e + "이 상담을 받았습니다");
+}
+~~~
+
+>최진혁이 상담을 받았습니다
+최유빈이 상담을 받았습니다
+한이람이 상담을 받았습니다
+
+위의 구문은 배열 members의 값을 변수 e에 담아서 중괄호 구간 안으로 전달해준다. 반복문의 종료조건이나 종료조건을 위해서 기준값을 증가시키는 등의 반복적인 작업을 내부적으로 감춘 것이라고 할 수 있다. 자바 5.0부터 도입된 기능이다.
+
