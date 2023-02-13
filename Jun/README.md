@@ -389,3 +389,126 @@ for (String e : members) {
 
 위의 구문은 배열 members의 값을 변수 e에 담아서 중괄호 구간 안으로 전달해준다. 반복문의 종료조건이나 종료조건을 위해서 기준값을 증가시키는 등의 반복적인 작업을 내부적으로 감춘 것이라고 할 수 있다. 자바 5.0부터 도입된 기능이다.
 
+
+---------------------
+
+
+###  2023년 2월 13일 자바 스터디 공부
+|   날짜    |   제목    |   설명    |   링크    |
+|-----------|----------|-----------|-----------|
+| 2023 | java 기초 | 메소드, 매개변수와 인자 | [링크]()  | 
+
+## 메소드
+메소드 = 함수
+
+~~~
+public static void numbering() {  //정의
+    int i = 0;
+    while (i < 10) {
+        System.out.println(i);
+        i++;
+    }
+}
+
+public static void main(String[] args) {
+    numbering();  //호출
+}
+~~~
+
+>0<br>
+1<br>
+2<br>
+3<br>
+4<br>
+5<br>
+6<br>
+7<br>
+8<br>
+9
+
+numbering이라는 메소드의 정의 및 호출
+<br>
+
+## 매개변수와 인자
+
+메소드의 입력 값은 매개변수(parameter)를 통해서 이루어진다.
+
+~~~
+ public static void numbering(int limit) {
+    int i = 0;
+    while (i < limit) {
+        System.out.println(i);
+        i++;
+    }
+}
+
+public static void main(String[] args) {
+    numbering(5);
+}
+~~~
+
+메소드에 데이터를 전달하기 위한 변수 limit<br>
+위의 코드와 아래의 코드는 같은 결과를 갖는다.
+~~~
+int limit = 5;
+int i = 0;
+while (i < limit) {
+    System.out.println(i);
+    i++;
+}
+~~~
+
+복수의 인자
+
+~~~
+public static String numbering(int init, int limit) {
+        int i = init;
+        String output = "";
+        while (i < limit) {
+            output += i;
+            i++;
+        }
+        return output;
+    }
+    public static void main(String[] args) {
+        String result = numbering(1, 5);
+        System.out.println(result);
+}
+~~~
+
+>메소드 내에서 사용한 return은 return 뒤에 따라오는 값을 메소드의 결과로 반환한다. 동시에 메소드를 종료시킨다. 한가지 잊지 말아야 할 점은 return을 통해서 반환할 값의 데이터 형식을 메소드의 이름 옆에 명시해주어야 한다는 것이다.<br>
+
+
+~~~
+public static String num(int i) {
+    if(i==0){
+        return "zero";
+    } else if(i==1){
+        return "one";
+    } else if(i==2){
+        return "two";
+    }
+    return "none";
+}
+
+public static void main(String[] args) {
+    System.out.println(num(1));
+}
+~~~
+
+return이 여러 번 등장하지만 return이 중복적으로 실행될 가능성이 없기 때문이다. return "none";를 제거하면 컴파일이 되지 않을 것이다.<br>
+
+복수의 return<br><br>
+
+~~~
+public static String[] getMembers() {
+    String[] members = { "최진혁", "최유빈", "한이람" };
+    return members;
+}
+
+public static void main(String[] args) {
+    String[] members = getMembers();
+}
+~~~
+
+>배열을 이용해서 복수의 값을 반환 할 수 있다.
