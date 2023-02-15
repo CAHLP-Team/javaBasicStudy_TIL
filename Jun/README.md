@@ -512,3 +512,73 @@ public static void main(String[] args) {
 ~~~
 
 >배열을 이용해서 복수의 값을 반환 할 수 있다.
+
+
+---------------------
+
+
+###  2023년 2월 14일 자바 스터디 공부
+|   날짜    |   제목    |   설명    |   링크    |
+|-----------|----------|-----------|-----------|
+| 2023 | java 기초 | 여러개의 입출력 | [링크]()  | 
+
+## 입력
+
+~~~
+ public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int i = sc.nextInt();
+        System.out.println(i*1000);
+        sc.close();
+    }
+~~~
+
+>1<br>1000
+
+위의 코드를 실행하기 위해서는 import java.util.Scanner; 가 필요하다
+
+~~~
+//예시 코드
+package org.opentutorials.javatutorials.io;
+import java.util.Scanner;
+public class ScannerDemo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int i = sc.nextInt();
+        System.out.println(i*1000);
+        sc.close();
+    }
+}
+~~~
+
+sc.nextInt()가 실행되면 자바는 사용자의 입력이 있을 때까지 변수 i에 값을 할당하지 않고 대기상태에 있게 된다. <br>키보드로 데이터를 입력하고 엔터를 누르면 비로서 i에 값이 담기고 i*1000을 통해서 입력값에 1000이 곱해지고 그 결과가 화면에 출력된다.
+
+~~~
+Scanner sc = new Scanner(System.in);
+while(sc.hasNextInt()) {
+    System.out.println(sc.nextInt()*1000); 
+}
+sc.close();
+~~~
+sc.hasNextInt()는 입력값이 생기기 전까지 실행을 유보시키는 역할을 한다.<br>만약 입력한 값이 int 형이 아닐 경우는 false를 리턴하고, int로 표현할 수 있는 형식의 숫자형인 경우는 true를 리턴한다.
+
+---------------------
+
+
+###  2023년 2월 15일 자바 스터디 공부
+|   날짜    |   제목    |   설명    |   링크    |
+|-----------|----------|-----------|-----------|
+| 2023 | java 기초 | 객체 지향 프로그래밍 | [링크]()  | 
+
+## 객체 지향
+
+**연관된 메소드와 그 메소드가 사용하는 변수들을 분류하고 그룹핑하는 것이다.**
+바르게 그룹핑 한 대상이 객체(Object)이다. 비유하자면 파일과 디렉토리가 있을 때 메소드나 변수가 파일이라면 이 파일을 그룹핑하는 디렉토리가 객체라고 할 수 있다.
+
+## 은닉확 = 캡슐화
+
+>*제대로된 부품이라면 그 부품의 원리를 모르는 사람이라도 사용 방법만 알면 쓸 수 있어야 한다. 즉, 내부의 원리는 가리고 사용법만 노출하는 것을 정보의 은닉화 또는 캡슐화라고 부른다.<br>그렇게 된다면 사용자들은 자연스럽게 사용 방법만을 생각할 수 있게 된다.*
+
+## 인터페이스
+
+각각의 부품은 미리 정해진 약속에 따라서 신호를 입, 출력하고, 연결점의 모양을 표준에 맞게 만들면 된다. 이러한 연결점을 **인터페이스(interface)**라고 한다
